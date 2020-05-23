@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 
-export class DishDetail extends Component {
+class DishDetail extends Component {
     render() {
 
-        const renderComments = this.props.selectedDish.comments.map((selectedComments) => {
+        const renderComments = this.props.dish.comments.map((selectedComment) => {
 			return (
-				<li key={selectedComments.id} className="list-unstyled">
-					<p>{selectedComments.comment}</p>
-					<p>-- {selectedComments.author}, {selectedComments.date}</p>
+				<li key={selectedComment.id} className="list-unstyled">
+					<p>{selectedComment.comment}</p>
+					<p>-- {selectedComment.author}, {selectedComment.date}</p>
 				</li>
+        
 			)
 		}		
 		);
@@ -19,10 +20,10 @@ export class DishDetail extends Component {
 				<div className = "row">
 					<div className ="col-12 col-md-5 m-1">
 						<Card>
-							<CardImg width="100%" src={this.props.selectedDish.image} alt={this.props.selectedDish.name} />
+							<CardImg width="100%" src={this.props.dish.image} alt={this.props.dish.name} />
 							<CardBody>
-								<CardTitle><strong>{this.props.selectedDish.name}</strong></CardTitle>
-								<CardText>{this.props.selectedDish.description}</CardText>
+								<CardTitle><strong>{this.props.dish.name}</strong></CardTitle>
+								<CardText>{this.props.dish.description}</CardText>
 							</CardBody>
 						</Card>
 					</div >
@@ -36,6 +37,4 @@ export class DishDetail extends Component {
 
         );
     }
-}
-
-//export default DishDetail;
+}export default DishDetail;
