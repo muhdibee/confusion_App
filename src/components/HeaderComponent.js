@@ -31,22 +31,22 @@ toggleNav() {
                     <Nav navbar>
                         <NavItem>
                             <NavLink className="nav-link" to="/home">
-                                <span className="fa fa-home fa-lg"></span>Home
+                                <span className="fa fa-home fa-lg"></span> Home
                             </NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink className="nav-link" to="/aboutus">
-                                <span className="fa fa-info us fa-lg"></span>About us
+                                <span className="fa fa-info us fa-lg"></span> About us
                             </NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink className="nav-link" to="/menu">
-                                <span className="fa fa-list fa-lg"></span>Menu
+                                <span className="fa fa-list fa-lg"></span> Menu
                             </NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink className="nav-link" to="/contactus">
-                                <span className="fa fa-card fa-lg"></span>Contact Us
+                                <span className="fa fa-address-card fa-lg"></span> Contact Us
                             </NavLink>
                         </NavItem>
                     </Nav>
