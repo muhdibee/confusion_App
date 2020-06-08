@@ -30,7 +30,8 @@ function RenderComments({comments}){
 							<p>-- {comment.author}, {comment.date}</p>
 						</li>
 					);
-				}) )}
+				  }))
+				}
 			</ul>
 		</div>
 	);
