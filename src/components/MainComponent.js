@@ -1,9 +1,5 @@
 import React, {Component} from 'react';
 import {Navbar, NavbarBrand} from 'reactstrap';
-import { COMMENTS } from '../shared/comments';
-import { PROMOTIONS } from '../shared/promotions';
-import { LEADERS } from '../shared/leaders';
-import {DISHES} from '../shared/dishes';
 import Home from './HomeComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
@@ -11,17 +7,23 @@ import Menu from './MenuComponent';
 import Contact from './ContactComponent';
 import About from './AboutComponent';
 import DishDetail  from './DishdetailComponent';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import {connect} from 'react-redux';
+
+
+const mapStateToProbs = state => {
+  return {
+    dishes: state.dishes,
+    comments: state.comments,
+    promotion: state.promotion,
+    leaders: state.leaders
+  };
+}
 
 class Main extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      dishes: DISHES,
-      comments: COMMENTS,
-      promotion:PROMOTIONS,
-      leaders:LEADERS
-    };
+    
   }
 
   render() {
@@ -58,4 +60,4 @@ class Main extends Component {
   } 
 }
 
-export default Main; 
+export default withRouter(connect(mapStateToProbs)(Main)); 
