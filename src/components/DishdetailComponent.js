@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody,Form, Input, Label, FormGroup } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody,Form, Input, Label, FormGroup, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import {LocalForm, Control, Errors} from 'react-redux-form';
 //import { ReactComponent } from '*.svg';
 
 
@@ -54,14 +55,18 @@ const CommentForm = (props) => {
 	);
 }
 
+const required=(val)=> val && val.length;
+const minlength=(len) =>(val)=> val && (val.length >= len);
+const maxlength=(len) =>(val) => val && (val.length <= len);
+
 class DishDetail extends Component{
 
 	constructor(props){
 		super(props);
 		this.toggleModal=this.toggleModal.bind(this);
-		this.handleLogin=this.handleLogin.bind(this);
+		this.handleCommentSubmit=this.handleCommentSubmit.bind(this);
 		this.state={
-			isCommentModalOpen: false,
+			isCommentModalOpen: false
 		};
 	}
 
@@ -71,10 +76,9 @@ class DishDetail extends Component{
 		);
 	}
 
-	handleLogin(e){
+	handleCommentSubmit(values){
 		this.toggleModal();
-		alert("Name: "+this.youName.value + " Rating: "+this.rating.value + " Comment: "+this.rating.value);
-		e.preventDefault();
+		alert("Your submission is "+JSON.stringify(values));
 	}
 
 	render(){
@@ -82,40 +86,60 @@ class DishDetail extends Component{
 			return (
 			  <div>
 				  <Modal isOpen={this.state.isCommentModalOpen} toggle={this.toggleModal}>
-					  <ModalHeader className="bg-light"toggle={this.toggleModal}>
+					  <ModalHeader className="bg-light" toggle={this.toggleModal}>
 						  <strong>Submit Comment</strong>
 					  </ModalHeader>
 					  <ModalBody>
-						  <Form onSubmit={this.handleLogin}>
+						  <LocalForm  onSubmit={(values) => this.handleCommentSubmit(values)}>
 							<FormGroup>
 								<Label htmlFor="rating" className="col-4">Rating</Label>
-								<Input type="select" name="rating" className="col-12 col-md-12" innerRef={(input)=> this.rating = input}>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</Input>
+								<Col>
+									<Control.select model=".rating" name="rating" id ="rating" className="col-12 col-md-12 form-control">
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+									</Control.select>
+									
+								</Col>
 						  	</FormGroup>
 							<FormGroup>
 								<Label htmlFor="name" className="col-4">Your Name</Label>
-								<Input type="text" name="youName" 
-									placeholder="Your Name" 
-									className="col-12 col-md-12" 
-									innerRef={(input)=> this.rating = input}
-								/>
+								<Col>
+									<Control.text model=".name" name="name" id="name"
+										placeholder="Your Name" 
+										className="col-12 col-md-12 form-control" validators={{required, minlength: minlength(3), maxlength: maxlength(15)}}
+									/>
+									<Errors
+										className="text-danger"
+										model=".name"
+										show="touched"
+										messages={{
+											required:"Required",
+											minlength:"Most be 3 characters or more",
+											maxlength:"Most be 15 characters or less"
+										}}
+									/>
+								</Col>
 							</FormGroup>
 							<FormGroup>
 								<Label htmlFor="comment" className="col-4">Comment</Label>
-								
-								<Input type="textarea" rows="8"
-								name="comment" 
-								className="col-12 col-md-12"
-								innerRef={(input)=> this.comment = input}
+								<Control.textarea rows="8" model=".comment"
+									name="comment" id="comment"
+									className="col-12 col-md-12 form-control" validators={{required}}
+								/>
+								<Errors
+									className="text-danger"
+									model=".comment"
+									show="touched"
+									messages={{
+										required:"Required"
+									}}
 								/>
 							</FormGroup>
-							<Button type="submit" value="submit" color="primary">Submit</Button>
-						  </Form>
+							<Button  type="submit" value="submit" color="primary">Submit</Button>
+						  </LocalForm>
 					 	</ModalBody>
 				  </Modal>
 				  <div className= "container">
