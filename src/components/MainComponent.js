@@ -15,7 +15,7 @@ const mapStateToProbs = state => {
   return {
     dishes: state.dishes,
     comments: state.comments,
-    promotion: state.promotion,
+    promotion: state.promotions,
     leaders: state.leaders
   };
 }

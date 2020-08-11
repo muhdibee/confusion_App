@@ -55,6 +55,10 @@ const CommentForm = (props) => {
 	);
 }
 
+
+
+
+
 const required=(val)=> val && val.length;
 const minlength=(len) =>(val)=> val && (val.length >= len);
 const maxlength=(len) =>(val) => val && (val.length <= len);
