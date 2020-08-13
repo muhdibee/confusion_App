@@ -23,17 +23,22 @@ function RenderDish({dish}){
 function RenderComments({comments, toggleModal}){
 	if (comments !=null){
 	return (
-		<div className="col-12 col-md-5 m-1">
-			<h4>Comments</h4>
+		<div className="col-12 ">
+			<h4 className="text-center">Comments</h4>
 			<ul className="list-unstyled">
-				{comments.map((comment => {
+				{comments.map((comment =>{
+					const currentDate = new Date().toISOString();
 					return(
 						<div>
-							<li key={comment.id}>
-							<p>{comment.comment}</p>
-							
-							<p>-- {comment.author}, {comment.date}</p>
-						</li>
+							<Card>
+								<CardBody col={6} className="">
+								<li key={comment.id}>
+									<p>{comment.comment}</p>
+									<p>-- {comment.author}, {comment.date}</p>
+								</li>
+								<p>-- {currentDate}</p>
+								</CardBody>
+							</Card>
 						</div>
 					);
 				  }))
@@ -49,7 +54,7 @@ function RenderComments({comments, toggleModal}){
 const CommentForm = (props) => {
 	return(
 		<Button outline onClick={props.click} >
-			<i className="fa fa-pencil" arial-hidden="true"></i>
+			<i className="fa fa-pencil" ></i>
 			<em>Submit Comment</em>
 		</Button>
 	);
@@ -89,7 +94,7 @@ class DishDetail extends Component{
 		if (this.props.dish !=null){
 			return (
 			  <div>
-				  <Modal isOpen={this.state.isCommentModalOpen} toggle={this.toggleModal}>
+				  <Modal isOpen={this.state.isCommentModalOpen} toggle={this.toggleModal} className="primary">
 					  <ModalHeader className="bg-light" toggle={this.toggleModal}>
 						  <strong>Submit Comment</strong>
 					  </ModalHeader>
