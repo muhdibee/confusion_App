@@ -2,22 +2,44 @@ import React, {Component} from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody,Form, Input, Label, FormGroup, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import {LocalForm, Control, Errors} from 'react-redux-form';
+import {Loading} from './LoadingComponent';
 //import { ReactComponent } from '*.svg';
 
 
-function RenderDish({dish}){
-	return(
-		<div className ="col-12 col-md-5 m-1">
-		<Card>
-			<CardImg width="100%" src={dish.image} alt={dish.name} />
-			<CardBody>
-				<CardTitle><strong>{dish.name}</strong></CardTitle>
-				<CardText>{dish.description}</CardText>
-			</CardBody>
-		</Card>
-	</div >
+function RenderDish(/*{dish}*/ props){
+	if (props.isLoding){
+		return(
+			<div className="container">
+				<div className="row">            
+					<Loading />
+				</div>
+			</div>
+		); 
+	}	
+	else if(props.errMess){
+		    return(
+				<div className="container">
+					<div className="row">            
+						<h4>{props.errMess}</h4>
+					</div>
+				</div>
+		);
+	}
+	else if (props.dish !=null){
+		return(
+			<div className ="col-12 col-md-5 m-1">
+				<Card>
+					<CardImg width="100%" src={props.dish.image} alt={props.dish.name} />
+					<CardBody>
+						<CardTitle><strong>{props.dish.name}</strong></CardTitle>
+						<CardText>{props.dish.description}</CardText>
+					</CardBody>
+				</Card>
+			</div >
 
-	);
+		);
+	}
+	
 }
 
 function RenderComments({comments, dishId, addComment}){
@@ -73,7 +95,6 @@ class CommentForm extends Component{
 
 	handleCommentSubmit(values){
 		this.toggleModal();
-		alert("Your submission is "+JSON.stringify(values));
 		this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
 
 	}

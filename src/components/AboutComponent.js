@@ -5,16 +5,21 @@ import { Link } from 'react-router-dom';
 function RenderLeader ({leaders}) {
     const showleader = leaders.map((leader)=> {
         return(
-            <Media className="mb-4 row">
-                <Media left middle className="mr-2">
-                    <Media object src={leader.image} alt={leader.image} />
+            <Card className="mb-0 px-3">
+            <CardBody>
+                <Media className="mb-4 row">
+                    <Media left middle className="mr-2">
+                        <Media object src={leader.image} alt={leader.image} height="120px" width="100px"/>
+                    </Media>
+                    <Media body>
+                        <Media heading>{leader.name}</Media>
+                        <p><strong>{leader.designation}</strong></p>
+                        {leader.description}
+                    </Media>
                 </Media>
-                <Media body>
-                    <Media heading>{leader.name}</Media>
-                    <p><strong>{leader.designation}</strong></p>
-                    {leader.description}
-                </Media>
-            </Media>
+            </CardBody>
+            </Card>
+            
             );
     });
 
@@ -52,7 +57,7 @@ const About = (props) => {
                         <CardBody>
                             <dl className="row p-1">
                                 <dt className="col-6">Started</dt>
-                                <dd className="col-6">3 Feb. 2013</dd>
+                                <dd className="col-6">3 Feb. 2020</dd>
                                 <dt className="col-6">Major Stake Holder</dt>
                                 <dd className="col-6">HK Fine Foods Inc.</dd>
                                 <dt className="col-6">Last Year's Turnover</dt>
@@ -79,10 +84,10 @@ const About = (props) => {
                 </div>
             </div>
             <div className="row row-content">
-                <div className="col-12 m-3">
+                <div className="col-12 m-3 text-center">
                     <h2>Corporate Leadership</h2>
                 </div>
-                <div className="col-12">
+                <div className="col-10 ">
                     <Media list>
                         <RenderLeader leaders={props.leaders} />
                     </Media>

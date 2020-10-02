@@ -65,7 +65,7 @@ handleLogin(event){
                         <NavbarBrand className="mr-auto" href="/">
                             <img src="assets/images/logo.png" height="30" width="41" alt="Ristorante Con Fusion" />
                         </NavbarBrand>
-                        <Collapse  isOpen={this.state.isNavOpen} navbar>
+                        <Collapse  isOpen={this.state.isNavOpen} navbar toggle={this.toggleNav}>
                             <Nav navbar>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/home">
@@ -73,7 +73,7 @@ handleLogin(event){
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/about">
+                                    <NavLink className="nav-link" to="/about"  toggle={this.toggleNav}>
                                         <span className="fa fa-info us fa-lg"></span> About us
                                     </NavLink>
                                 </NavItem>

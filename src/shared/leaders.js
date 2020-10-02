@@ -1,17 +1,17 @@
 export const LEADERS = [
     {
       id: 0,
-      name: 'Peter Pan',
-      image: '/assets/images/alberto.png',
+      name: 'Muhammad Ibrahim',
+      image: '/assets/images/me_linkedin.jpg',
       designation: 'Chief Epicurious Officer',
       abbr: 'CEO',
-      featured: false,
-      description: "Our CEO, Peter, credits his hardworking East Asian immigrant parents who undertook the arduous journey to the shores of America with the intention of giving their children the best future. His mother's wizardy in the kitchen whipping up the tastiest dishes with whatever is available inexpensively at the supermarket, was his first inspiration to create the fusion cuisines for which The Frying Pan became well known. He brings his zeal for fusion cuisines to this restaurant, pioneering cross-cultural culinary connections."
+      featured: true,
+      description: "Our CEO, Muhammad, credits his hardworking West Africa immigrant parents who undertook the arduous journey to the shores of America with the intention of giving their children the best future. His mother's wizardy in the kitchen whipping up the tastiest dishes with whatever is available inexpensively at the supermarket, was his first inspiration to create the fusion cuisines for which The Frying Pan became well known. He brings his zeal for fusion cuisines to this restaurant, pioneering cross-cultural culinary connections."
     },
     {
       id: 1,
-      name: 'Dhanasekaran Witherspoon',
-      image: '/assets/images/alberto.png',
+      name: 'Muhammad Nuradeen',
+      image: '/assets/images/muhammad-1.jpg',
       designation: 'Chief Food Officer',
       abbr: 'CFO',
         featured: false,
@@ -32,7 +32,7 @@ export const LEADERS = [
       image: '/assets/images/alberto.png',
       designation: 'Executive Chef',
       abbr: 'EC',
-      featured: true,
+      featured: false,
       description: 'Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!'
     }
   ];
