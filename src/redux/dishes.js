@@ -1,7 +1,4 @@
-import { DISHES } from '../shared/dishes';
-import * as ActionTypes from './actionTypes';
-import { Switch } from 'react-router-dom';
-
+import * as ActionTypes from './ActionTypes';
 
 export const Dishes = (state = {isLoading: true, errmess:null, dishes:[]}, action) => {
     switch (action.type){

@@ -12,7 +12,7 @@ class Header extends Component {
         this.handleLogin = this.handleLogin.bind(this);
         this.state={
             isNavOpen:false,
-            isModalOpen:0
+            isModalOpen:false,
         }
     }
 

@@ -3,11 +3,11 @@ import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbIte
 import { Link } from 'react-router-dom';
 import {LocalForm, Control, Errors} from 'react-redux-form';
 import {Loading} from './LoadingComponent';
-//import { ReactComponent } from '*.svg';
+import {baseUrl} from '../shared/baseUrl';
 
 
-function RenderDish(/*{dish}*/ props){
-	if (props.isLoding){
+function RenderDish({dish, isLoading, errMess}){
+	if (isLoading){
 		return(
 			<div className="container">
 				<div className="row">            
@@ -16,23 +16,23 @@ function RenderDish(/*{dish}*/ props){
 			</div>
 		); 
 	}	
-	else if(props.errMess){
+	else if(errMess){
 		    return(
 				<div className="container">
 					<div className="row">            
-						<h4>{props.errMess}</h4>
+						<h4>{errMess}</h4>
 					</div>
 				</div>
 		);
 	}
-	else if (props.dish !=null){
+	else if (dish !=null){
 		return(
 			<div className ="col-12 col-md-5 m-1">
 				<Card>
-					<CardImg width="100%" src={props.dish.image} alt={props.dish.name} />
+					<CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
 					<CardBody>
-						<CardTitle><strong>{props.dish.name}</strong></CardTitle>
-						<CardText>{props.dish.description}</CardText>
+						<CardTitle><strong>{dish.name}</strong></CardTitle>
+						<CardText>{dish.description}</CardText>
 					</CardBody>
 				</Card>
 			</div >
