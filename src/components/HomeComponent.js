@@ -36,7 +36,7 @@ function Home(props) {
                     <Rendercard item={props.dish} isLoading={props.dishesLoading} errMess={props.dishesErrMess}  />
                 </div>
                 <div className="col-12 col-md m-1">
-                    {/* <Rendercard item={props.promotion} isLoading={props.promoLoading} errMess={props.promoErrMess} /> */}
+                    {/* <Rendercard item={props.promotion} isLoading={props.promosLoading} errMess={props.promosErrMess} /> */}
                     <Card>
                         <CardImg src='http://localhost:3001/images/buffet.png' alt='Buffet'/>
                         <CardBody>
