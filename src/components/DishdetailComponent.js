@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import {LocalForm, Control, Errors} from 'react-redux-form';
 import {Loading} from './LoadingComponent';
 import {baseUrl} from '../shared/baseUrl';
+import {Fade, Stagger, FadeTransform} from 'react-animation-components'
 
 
 function RenderDish({dish, isLoading, errMess}){
@@ -27,15 +28,18 @@ function RenderDish({dish, isLoading, errMess}){
 	}
 	else if (dish !=null){
 		return(
-			<div className ="col-12 col-md-5 m-1">
-				<Card>
-					<CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
-					<CardBody>
-						<CardTitle><strong>{dish.name}</strong></CardTitle>
-						<CardText>{dish.description}</CardText>
-					</CardBody>
-				</Card>
-			</div >
+			// <FadeTransform in transformProps={{ exitTransform: 'scale(0.3) translateY(-50%)'}}>
+				<div className ="col-12 col-md-5 m-1">
+					<Card>
+						<CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
+						<CardBody>
+							<CardTitle><strong>{dish.name}</strong></CardTitle>
+							<CardText>{dish.description}</CardText>
+						</CardBody>
+					</Card>
+				</div >
+			// </FadeTransform>
+			
 
 		);
 	}
@@ -48,23 +52,29 @@ function RenderComments({comments, dishId, postComment}){
 		<div className="col-12 ">
 			<h4 className="text-center">Comments</h4>
 			<ul className="list-unstyled">
-				{comments.map((comment =>{
+				<Stagger in>
+					{comments.map((comment =>{
 					const currentDate = new Date().toISOString();
 					return(
 						<div>
 							<Card>
 								<CardBody col={6} className="">
-								<li key={comment.id}>
+								<Fade in >
+									<li key={comment.id}>
 									<p>{comment.comment}</p>
 									<p>-- {comment.author}, {comment.date}</p>
 								</li>
 								<p>-- {currentDate}</p>
+								</Fade>
+								
 								</CardBody>
 							</Card>
 						</div>
 					);
 				  }))
 				}
+				</Stagger>
+				
 			</ul>
 			<CommentForm postComment={postComment} dishId={dishId}/>
 		</div>
