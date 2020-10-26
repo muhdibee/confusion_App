@@ -209,6 +209,14 @@
       "comment": "Test",
       "date": "2020-10-21T10:19:27.488Z",
       "id": 20
+    },
+    {
+      "dishId": 2,
+      "rating": "5",
+      "author": "Ibrahim",
+      "comment": "I like this meal.",
+      "date": "2020-10-26T20:21:42.535Z",
+      "id": 21
     }
   ],
   "promotions": [
