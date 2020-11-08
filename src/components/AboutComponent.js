@@ -1,25 +1,43 @@
+import { baseUrl } from '../shared/baseUrl';
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import {Fade, Stagger, FadeTransform} from 'react-animation-components'
+import { Loading } from './LoadingComponent';
 
-function RenderLeader ({leaders}) {
+
+function RenderLeader ({leaders, isLoading, errMess}) {
     const showleader = leaders.map((leader)=> {
-        return(
-            <Card className="mb-0 px-3">
-            <CardBody>
-                <Media className="mb-4 row">
-                    <Media left middle className="mr-2">
-                        <Media object src={leader.image} alt={leader.image} height="120px" width="100px"/>
-                    </Media>
-                    <Media body>
-                        <Media heading>{leader.name}</Media>
-                        <p><strong>{leader.designation}</strong></p>
-                        {leader.description}
-                    </Media>
-                </Media>
-            </CardBody>
-            </Card>
-            
+        if (isLoading){
+            return (
+                <Loading/>
+            )
+        }
+        else if (errMess){
+            return(
+                <h4>{errMess}</h4>
+            )
+        }
+        else
+            return(
+                <Stagger in>
+                    <Card className="mb-0 px-3">
+                        <CardBody>
+                            <Media className="mb-4 row">
+                                <Media left middle className="mr-2">
+                                    <Media object src={baseUrl + leader.image} alt={leader.name} height="150px" width="120px"/>
+                                </Media>
+                                <Media body>
+                                    <Fade in>
+                                        <Media heading>{leader.name}</Media>
+                                        <p><strong>{leader.designation}</strong></p>
+                                        {leader.description}
+                                    </Fade>
+                                </Media>
+                            </Media>
+                        </CardBody>
+                    </Card>
+                </Stagger>
             );
     });
 
@@ -89,7 +107,7 @@ const About = (props) => {
                 </div>
                 <div className="col-10 ">
                     <Media list>
-                        <RenderLeader leaders={props.leaders} />
+                        <RenderLeader leaders={props.leaders} isLoading={props.leadersLoading} errMess={props.leadersErrMess}/>
                     </Media>
                 </div>
             </div>

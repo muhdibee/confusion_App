@@ -28,7 +28,7 @@ function RenderDish({dish, isLoading, errMess}){
 	}
 	else if (dish !=null){
 		return(
-			// <FadeTransform in transformProps={{ exitTransform: 'scale(0.3) translateY(-50%)'}}>
+			//<FadeTransform in transformProps={{ exitTransform: 'scale(0.3) translateY(-50%)'}}>
 				<div className ="col-12 col-md-5 m-1">
 					<Card>
 						<CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />

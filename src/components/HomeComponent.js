@@ -38,18 +38,10 @@ function Home(props) {
                     <Rendercard item={props.dish} isLoading={props.dishesLoading} errMess={props.dishesErrMess}  />
                 </div>
                 <div className="col-12 col-md m-1">
-                    {/* <Rendercard item={props.promotion} isLoading={props.promosLoading} errMess={props.promosErrMess} /> */}
-                    <Card>
-                        <CardImg src='http://localhost:3001/images/buffet.png' alt='Buffet'/>
-                        <CardBody>
-                            <CardTitle><strong>Buffet</strong></CardTitle>
-                            {/* {item.designation ? <CardSubtitle><strong>{item.designation}</strong></CardSubtitle> : null} */}
-                            <CardText>Buffet</CardText>
-                        </CardBody>
-                    </Card>
+                     <Rendercard item={props.promotion} isLoading={props.promosLoading} errMess={props.promosErrMess} /> 
                 </div>
                 <div className="col-12 col-md m-1">
-                    <Rendercard item={props.leader}/>
+                    <Rendercard item={props.leaders} isLoading={props.leadersLoading} errMess={props.leadersErrMess}/> 
                 </div>
             </div>
         </div>
