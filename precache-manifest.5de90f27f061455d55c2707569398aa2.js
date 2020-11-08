@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e6c7021f5b61e7b180055049f52f9d1c",
+    "revision": "8269f93c74488bad81f22fe9241bda7d",
     "url": "/muhdibee/confusion_App/index.html"
   },
   {
-    "revision": "e698247e6eb61f1c9b7a",
+    "revision": "802c6deecac89a193c9f",
     "url": "/muhdibee/confusion_App/static/css/2.2c6a2cfb.chunk.css"
   },
   {
-    "revision": "e68105422fc858152774",
+    "revision": "034ef90cd41a8803f430",
     "url": "/muhdibee/confusion_App/static/css/main.2de22759.chunk.css"
   },
   {
-    "revision": "e698247e6eb61f1c9b7a",
-    "url": "/muhdibee/confusion_App/static/js/2.31e40ab7.chunk.js"
+    "revision": "802c6deecac89a193c9f",
+    "url": "/muhdibee/confusion_App/static/js/2.634f60bc.chunk.js"
   },
   {
     "revision": "9a2cf355ca348d84eedb0129142dc576",
-    "url": "/muhdibee/confusion_App/static/js/2.31e40ab7.chunk.js.LICENSE.txt"
+    "url": "/muhdibee/confusion_App/static/js/2.634f60bc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e68105422fc858152774",
-    "url": "/muhdibee/confusion_App/static/js/main.45419c2b.chunk.js"
+    "revision": "034ef90cd41a8803f430",
+    "url": "/muhdibee/confusion_App/static/js/main.44bb529c.chunk.js"
   },
   {
     "revision": "2993547c1fd59b9f7bf3",
