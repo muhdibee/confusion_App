@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/muhdibee/confusion_App/precache-manifest.318597e4ea3e34e76e9566c3863363ba.js"
+  "/muhdibee/confusion_App/precache-manifest.53101a5bfef7a7230fbd7bf7f9b24827.js"
 );
 
 self.addEventListener('message', (event) => {
