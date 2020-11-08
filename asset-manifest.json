@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/muhdibee/confusion_App/static/css/main.2de22759.chunk.css",
+    "main.js": "/muhdibee/confusion_App/static/js/main.31a6a8b7.chunk.js",
+    "main.js.map": "/muhdibee/confusion_App/static/js/main.31a6a8b7.chunk.js.map",
+    "runtime-main.js": "/muhdibee/confusion_App/static/js/runtime-main.c6b5404c.js",
+    "runtime-main.js.map": "/muhdibee/confusion_App/static/js/runtime-main.c6b5404c.js.map",
+    "static/css/2.2c6a2cfb.chunk.css": "/muhdibee/confusion_App/static/css/2.2c6a2cfb.chunk.css",
+    "static/js/2.31e40ab7.chunk.js": "/muhdibee/confusion_App/static/js/2.31e40ab7.chunk.js",
+    "static/js/2.31e40ab7.chunk.js.map": "/muhdibee/confusion_App/static/js/2.31e40ab7.chunk.js.map",
+    "index.html": "/muhdibee/confusion_App/index.html",
+    "precache-manifest.318597e4ea3e34e76e9566c3863363ba.js": "/muhdibee/confusion_App/precache-manifest.318597e4ea3e34e76e9566c3863363ba.js",
+    "service-worker.js": "/muhdibee/confusion_App/service-worker.js",
+    "static/css/2.2c6a2cfb.chunk.css.map": "/muhdibee/confusion_App/static/css/2.2c6a2cfb.chunk.css.map",
+    "static/css/main.2de22759.chunk.css.map": "/muhdibee/confusion_App/static/css/main.2de22759.chunk.css.map",
+    "static/js/2.31e40ab7.chunk.js.LICENSE.txt": "/muhdibee/confusion_App/static/js/2.31e40ab7.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.css": "/muhdibee/confusion_App/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c6b5404c.js",
+    "static/css/2.2c6a2cfb.chunk.css",
+    "static/js/2.31e40ab7.chunk.js",
+    "static/css/main.2de22759.chunk.css",
+    "static/js/main.31a6a8b7.chunk.js"
+  ]
+}
