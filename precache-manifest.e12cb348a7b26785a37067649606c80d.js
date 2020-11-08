@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "13e2016c7e6cece39b7399f53435f20d",
+    "revision": "e981d857668d250e978a74c2b24289aa",
     "url": "/muhdibee/confusion_App/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/muhdibee/confusion_App/static/css/2.2c6a2cfb.chunk.css"
   },
   {
-    "revision": "92492013ef6edc7c1d7b",
+    "revision": "e27914d1ce4911a73750",
     "url": "/muhdibee/confusion_App/static/css/main.2de22759.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/muhdibee/confusion_App/static/js/2.d31bf4a3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "92492013ef6edc7c1d7b",
-    "url": "/muhdibee/confusion_App/static/js/main.1ca7fddc.chunk.js"
+    "revision": "e27914d1ce4911a73750",
+    "url": "/muhdibee/confusion_App/static/js/main.6975a185.chunk.js"
   },
   {
     "revision": "2993547c1fd59b9f7bf3",
